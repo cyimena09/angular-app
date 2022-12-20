@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MyLibService} from 'emile-lib';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-client-lib';
+
+  constructor(private service:MyLibService) {
+
+    const message = service.getDatas();
+    console.log(message);
+  }
+
 }
